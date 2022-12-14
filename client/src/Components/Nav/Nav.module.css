@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homeBtn {
+  color: #fff;
+  text-decoration: none;
+}
+
+.infoBtn {
+  color: #fff;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.loginBtn {
+  color: #fff;
+  text-decoration: none;
+}
