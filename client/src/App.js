@@ -5,6 +5,8 @@ import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
 import Info from './components/Info/Info';
 import Login from './components/Login/Login';
+import Restaurants from './components/Restaurants/Restaurants';
+
 
 import styles from './App.module.css'
 
@@ -27,6 +29,7 @@ function App() {
         <Routes>
 
           <Route path='/' element={<Home />} />
+          <Route path='/restaurants' element={<Restaurants />} />
           <Route path='/info' element={<Info />} />
           <Route path='/login' element={<Login />} />
 

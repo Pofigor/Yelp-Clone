@@ -28,13 +28,16 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton> */}
           <div className={styles.leftDiv}>
-            <Link to='/' className={styles.homeBtn} variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Home
-            </Link>
+
+            <Link to='/' className={styles.homeBtn} color="inherit">Home</Link>
+           
+            <Link to='/restaurants' className={styles.restLink} color="inherit">Restaurants</Link>
+
+            <Link to='/info' className={styles.infoBtn} color="inherit">Info</Link>
+            
           </div>
 
           <div className={styles.rightDiv}>
-            <Link to='/info' className={styles.infoBtn} color="inherit">Info</Link>
             <Link to='/login' className={styles.loginBtn} color="inherit">Login</Link>
           </div>
         </Toolbar>
