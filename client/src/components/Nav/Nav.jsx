@@ -16,7 +16,7 @@ export default function ButtonAppBar() {
   return (
     <Container fixed>
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar className={styles.navBar} position="static">
         <Toolbar className={styles.nav}>
           {/* <IconButton
             size="large"

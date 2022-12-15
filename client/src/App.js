@@ -6,6 +6,8 @@ import Home from './components/Home/Home';
 import Info from './components/Info/Info';
 import Login from './components/Login/Login';
 
+import styles from './App.module.css'
+
 
 
 import { Routes, Route } from 'react-router-dom';
@@ -17,7 +19,7 @@ function App() {
   return (
     <div className='app'>
 
-      <header className='app-header'>
+      <header className={styles.appHeader}>
         <Nav />
       </header>
 
