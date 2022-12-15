@@ -22,7 +22,7 @@ dbConnectionCheck();
 
 app.use('/', homeRouter);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 9999;
 // const { PORT, SESSION_SECRET } = process.env;
 
 app.listen(PORT, () => {
