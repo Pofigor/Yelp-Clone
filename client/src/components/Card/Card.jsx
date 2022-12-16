@@ -5,8 +5,8 @@ import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import PaymentIcon from '@mui/icons-material/Payment';
 import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
 // import { Link } from 'react-router-dom';
-
-
+import IconCheckboxes from '../checkBoxFavourite/checkBoxFavourite'
+import BasicRating from '../restRating/restRating'
 
 export default function Card() {
 
@@ -23,9 +23,12 @@ export default function Card() {
 
       <div className={styles.card}>
 
-        <div className={styles.cardWrapper}>
+        <div className={styles.cardWrapper} > 
 
-          <div className={styles.img}><img className={styles.img} src='/img/1.JPG' alt='img' /></div>
+          <div className={styles.favorite}><IconCheckboxes/></div>
+
+
+          <div className={styles.img}><img className={styles.img} src='/img/kfc.jpg' alt='img' /></div>
 
           <div className={styles.cardText}>
 
@@ -42,11 +45,13 @@ export default function Card() {
           </div>
 
           <div className={styles.more}>
-            <Button onClick={moreHandler} className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
             <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
             <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
             <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p>
+            <div className={styles.restRating}><BasicRating/></div>
           </div>
+
+          <Button onClick={moreHandler} className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
 
 
         </div>
