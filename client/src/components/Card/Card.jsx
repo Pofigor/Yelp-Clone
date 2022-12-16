@@ -4,10 +4,19 @@ import {Button} from '@mui/material'
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import PaymentIcon from '@mui/icons-material/Payment';
 import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
+// import { Link } from 'react-router-dom';
+
 
 
 export default function Card() {
+
+  const moreHandler = () => {
+    console.log('Pressed button!!!');
+  } 
+
+
   return (
+
     <div className={styles.cardContainer}>
 
       {/* <h1 className={styles.cardTitle}>Card</h1> */}
@@ -33,7 +42,7 @@ export default function Card() {
           </div>
 
           <div className={styles.more}>
-            <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
+            <Button onClick={moreHandler} className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
             <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
             <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
             <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p>

@@ -20,10 +20,12 @@
   text-decoration: none;
 }
 
-.loginBtn {
-  color: #1976D2 !important;
-  background-color: #fff !important;
-  text-decoration: none;
+.sendBtn {
+  width: 140px !important;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 .restLink {
