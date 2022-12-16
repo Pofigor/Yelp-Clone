@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Info from './components/Info/Info';
 import Login from './components/Login/Login';
 import Restaurants from './components/Restaurants/Restaurants';
+import Card from './components/Card/Card';
 
 
 import styles from './App.module.css'
@@ -30,8 +31,10 @@ function App() {
 
           <Route path='/' element={<Home />} />
           <Route path='/restaurants' element={<Restaurants />} />
+          <Route path='/card' element={<Card />} />
           <Route path='/info' element={<Info />} />
           <Route path='/login' element={<Login />} />
+          <Route path='*' element={<>Requested page not found</>} />
 
         </Routes>
 
