@@ -17,7 +17,6 @@ export default function Login() {
         <Button className={styles.sendBtn} variant="contained">Log in</Button>
       </div>
 
-      {/* <img className={styles.img} src='/img/3.jpg' alt='img' /> */}
     </div>
   )
 }
