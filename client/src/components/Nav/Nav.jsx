@@ -5,7 +5,6 @@ import Toolbar from '@mui/material/Toolbar';
 import styles from './Nav.module.css'
 import { Link } from 'react-router-dom';
 import Container from '@mui/material/Container';
-import LoginIcon from '@mui/icons-material/Login';
 import {Button} from '@mui/material'
 
 

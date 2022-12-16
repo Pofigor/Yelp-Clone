@@ -10,7 +10,7 @@ export default function Card() {
   return (
     <div className={styles.cardContainer}>
 
-      <h1 className={styles.cardTitle}>Card</h1>
+      {/* <h1 className={styles.cardTitle}>Card</h1> */}
 
       <div className={styles.card}>
 
