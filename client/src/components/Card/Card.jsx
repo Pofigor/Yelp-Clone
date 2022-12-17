@@ -8,6 +8,7 @@ import {Button} from '@mui/material'
 import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
 import BasicRating from '../../icons/restRating/restRating'
 import CheckIcon from '@mui/icons-material/Check';
+import {Link} from 'react-router-dom'
 
 export default function Card() {
 
@@ -72,7 +73,10 @@ export default function Card() {
             <div className={styles.rightBox}>
 
               <div className={styles.restRating}><BasicRating/></div>
-              <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
+
+              <Link to={`/restaurants/:id`}>
+                <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
+              </Link>
 
             </div>
 

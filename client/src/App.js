@@ -29,10 +29,15 @@ function App() {
         <Routes>
 
           <Route path='/' element={<Home />} />
-          <Route path='/restaurants' element={<Restaurants />} />
           <Route path='/info' element={<Info />} />
           <Route path='/login' element={<Login />} />
           <Route path='/more' element={<RestMore />} />
+
+          <Route path='/restaurants'>          
+            <Route path='' element={<Restaurants />} />           
+            <Route path=':id' element={<RestMore />} />
+          </Route>
+
           <Route path='*' element={<>Requested page not found</>} />
 
         </Routes>
