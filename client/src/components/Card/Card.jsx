@@ -5,8 +5,8 @@ import {Button} from '@mui/material'
 // import PaymentIcon from '@mui/icons-material/Payment';
 // import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
 // import { Link } from 'react-router-dom';
-import IconCheckboxes from '../checkBoxFavourite/checkBoxFavourite'
-import BasicRating from '../restRating/restRating'
+import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
+import BasicRating from '../../icons/restRating/restRating'
 import CheckIcon from '@mui/icons-material/Check';
 
 export default function Card() {
