@@ -30,8 +30,6 @@ export default function ButtonAppBar() {
 
           <div className={styles.rightDiv}>
  
-            {/* <Link to='/login' className={styles.loginBtn} color="inherit"><LoginIcon /></Link> */}
-
             <Link to='/login'><Button className={styles.sendBtn} variant="contained">Log in</Button></Link>
 
           </div>
