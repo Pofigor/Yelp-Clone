@@ -36,15 +36,16 @@ export default function Card() {
 
         <div className={styles.cardWrapper} > 
 
-          <div className={styles.favorite}><IconCheckboxes/></div>
+          <div className={styles.img}><img className={styles.img} src='/img/rest/Lily.jpg' alt='img' /></div>
 
+          <div className={styles.titleBox}>
 
-          <div className={styles.img}><img className={styles.img} src='/img/kfc.jpg' alt='img' /></div>
+            <div className={styles.title}>Lily restaurant</div>
+            <div className={styles.favorite}><IconCheckboxes/></div>
 
+          </div>
+          
           <div className={styles.cardText}>
-
-            <div className={styles.title}>Andalus restaurant</div>
-            
           
             <div className={styles.description}>
               <p className={styles.descParagraph}>Некоторое описание данного ресторана. 

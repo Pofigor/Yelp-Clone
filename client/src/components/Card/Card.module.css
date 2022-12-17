@@ -16,6 +16,7 @@
   border: 1px solid #b9b9b95b;
   border-radius: 10px;
   padding: 10px 14px;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -24,34 +25,34 @@
 }
 
 .cardWrapper {
-  position: relative;
-  height: 100%;
+  height: 410px;
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
   margin-top: 4px;
+  /* border: 1px solid #b9b9b95b; */
 }
-
-.favorite {
-  position: absolute;
-  right: 0px;
-}
-
 
 .img {
-  max-height: 200px;
+  height: 200px;
   width: 100%;
-  margin-bottom: 15px;
-  border: 1px solid #b9b9b95b;
+  margin-bottom: 5px;
   border-radius: 10px;
+}
 
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .title {
   color: #8b8b8b;
   font-size: 18px;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .description {
@@ -61,7 +62,6 @@
   overflow: hidden;
   line-height: 22px;
   text-align: justify;
-  margin-bottom: 5px;
 }
 
 .descParagraph {
