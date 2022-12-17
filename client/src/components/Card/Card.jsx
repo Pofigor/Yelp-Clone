@@ -1,18 +1,29 @@
 import React from 'react';
 import styles from './Card.module.css'
 import {Button} from '@mui/material'
-import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-import PaymentIcon from '@mui/icons-material/Payment';
-import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
+// import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+// import PaymentIcon from '@mui/icons-material/Payment';
+// import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
 // import { Link } from 'react-router-dom';
 import IconCheckboxes from '../checkBoxFavourite/checkBoxFavourite'
 import BasicRating from '../restRating/restRating'
+import CheckIcon from '@mui/icons-material/Check';
 
 export default function Card() {
 
-  const moreHandler = () => {
-    console.log('Pressed button!!!');
-  } 
+  // const [restaurants, setRestaurants] = React.useState([])
+
+  // React.useEffect(() => {
+  //  (async function getRestaurant() {
+  //     const restaurant = await fetch('http://localhost:/3001/restaurants')
+  //     const res = await restaurant.json();
+  //     console.log('res====', res);
+  //   })() 
+  // })
+
+  // const moreHandler = () => {
+  //   console.log('Pressed button!!!');
+  // } 
 
 
   return (
@@ -44,14 +55,28 @@ export default function Card() {
 
           </div>
 
-          <div className={styles.more}>
-            <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
-            <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
-            <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p>
-            <div className={styles.restRating}><BasicRating/></div>
+          <div className={styles.bottomBox}>
+
+            <div className={styles.leftBox}>
+
+              {/* <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
+              <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
+              <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p> */}
+              <p className={styles.CheckIcon}><CheckIcon/><span className={styles.checkIconText}>Еда на вынос</span> </p>
+              <p className={styles.CheckIcon}><CheckIcon/><span className={styles.checkIconText}>Доставка</span> </p>
+              <p className={styles.CheckIcon}><CheckIcon/><span className={styles.checkIconText}>Оплата картой</span> </p>
+
+            </div>
+
+            <div className={styles.rightBox}>
+
+              <div className={styles.restRating}><BasicRating/></div>
+              <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
+
+            </div>
+
           </div>
 
-          <Button onClick={moreHandler} className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
 
 
         </div>

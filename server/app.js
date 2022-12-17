@@ -1,6 +1,8 @@
 require('@babel/register');
 require('dotenv').config();
 
+const cors = require('cors');
+
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
@@ -12,6 +14,14 @@ const dbConnectionCheck = require('./src/lib/dbConnectionCheck');
 const homeRouter = require('./src/routers/homeRouter');
 
 const app = express();
+
+const corsOptions = {
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
+  optionsSuccessStatus: 200,
+  credentials: true, // принимать куки от сторонних источников
+};
+
+app.use(cors(corsOptions));
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));

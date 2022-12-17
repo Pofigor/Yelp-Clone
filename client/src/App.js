@@ -11,14 +11,13 @@ import Card from './components/Card/Card';
 
 import styles from './App.module.css'
 
-
-
 import { Routes, Route } from 'react-router-dom';
 
 import Container from '@mui/material/Container';
 
 
 function App() {
+
   return (
     <div className='app'>
 
