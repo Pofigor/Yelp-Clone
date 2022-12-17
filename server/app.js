@@ -12,6 +12,7 @@ const dbConnectionCheck = require('./src/lib/dbConnectionCheck');
 // const renderTemplate = require('./src/lib/renderTemplate');
 
 const homeRouter = require('./src/routers/homeRouter');
+const oneRestRouter = require('./src/routers/moreRouter');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 dbConnectionCheck();
 
 app.use('/', homeRouter);
+app.use('/restaurants', oneRestRouter);
 
 const PORT = process.env.PORT || 9999;
 // const { PORT, SESSION_SECRET } = process.env;
