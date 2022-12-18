@@ -86,7 +86,7 @@ function App() {
 
           <Route path='/restaurants'>
             <Route path='' element={<Restaurants restaurant={restaurant} setRestaurant={setRestaurant} />} />
-            <Route path=':id' element={<RestMore />} />
+            <Route path=':id' element={<RestMore restaurant={restaurant} etRestaurant={setRestaurant} />} />
           </Route>
 
           <Route path='*' element={<>Requested page not found</>} />

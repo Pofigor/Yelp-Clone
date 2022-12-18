@@ -8,12 +8,12 @@ import {Button} from '@mui/material'
 
 
 
-export default function Home({restaurant, setRestaurant}) {
+export default function Home({restaurant, setRestaurant}) { //добавил пропсы. ДУмаю, как через фильтр отобразить только одку карточку по айди
   return (
     <div className={styles.homeContainer}>
 
       {restaurant?.map((el) => (
-        <div className={styles.card}>
+        <div className={styles.card} key={el.id}>
 
         <div className={styles.cardWrapper} > 
 
