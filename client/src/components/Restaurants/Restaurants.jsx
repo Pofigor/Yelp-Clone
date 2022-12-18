@@ -25,7 +25,7 @@ export default function Restaurants({restaurant, setRestaurant}) {
     <div className={styles.cards}>
       
       {restaurant?.map((el) => (
-        <div className={styles.card}>
+        <div className={styles.card} key={el.id}>
 
         <div className={styles.cardWrapper} > 
 
