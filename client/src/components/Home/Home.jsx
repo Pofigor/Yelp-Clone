@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Home.module.css';
-// import Card from '../Card/Card';
 import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
 import BasicRating from '../../icons/restRating/restRating'
 import CheckIcon from '@mui/icons-material/Check';

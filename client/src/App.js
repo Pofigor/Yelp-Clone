@@ -85,7 +85,7 @@ function App() {
           <Route path='/more' element={<RestMore />} />
 
           <Route path='/restaurants'>
-            <Route path='' element={<Restaurants />} />
+            <Route path='' element={<Restaurants restaurant={restaurant} setRestaurant={setRestaurant} />} />
             <Route path=':id' element={<RestMore />} />
           </Route>
 
