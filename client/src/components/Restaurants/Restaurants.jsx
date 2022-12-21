@@ -25,7 +25,6 @@ export default function Restaurants() {
         if(response.ok) {
           const rest = await response.json();
           setRestaurant(rest.allRest)
-          
         } else {
           console.log('ERROR! Fetch is no OK');
         }
@@ -51,7 +50,7 @@ export default function Restaurants() {
 
             restaurant.map((el) => (
 
-                <div className={styles.cards}>
+                <div className={styles.cards} key={el.id}>
 
                   <div className={styles.card}>
 
@@ -91,7 +90,7 @@ export default function Restaurants() {
 
                           <div className={styles.restRating}><BasicRating /></div>
 
-                          <Link to={`/restaurants/:id`}>
+                          <Link to={`/restaurants/${el.id}`}>
                             <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
                           </Link>
 
@@ -113,8 +112,8 @@ export default function Restaurants() {
           (
 
             <div className={styles.loadingDiv}>
-              <Box class={styles.loadingDiv}><CircularProgress />
-                <div class={styles.loading}>loading...</div>
+              <Box className={styles.loadingDiv}><CircularProgress />
+                <div className={styles.loading}>loading...</div>
               </Box>
             </div>
 

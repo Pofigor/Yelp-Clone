@@ -8,7 +8,7 @@ import Restaurants from './components/Restaurants/Restaurants';
 import RestMore from './components/RestMore/RestMore'
 
 
-import styles from './App.module.css'
+// import styles from './App.module.css'
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -48,11 +48,11 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/info' element={<Info />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/more' element={<RestMore />} />
+          {/* <Route path='/more' element={<RestMore />} /> */}
 
           <Route path='/restaurants'>
             <Route path='' element={<Restaurants />} />
-            {/* <Route path=':id' element={<RestMore restaurant={restaurant} etRestaurant={setRestaurant} />} /> */}
+            <Route path='/restaurants/:id' element={<RestMore />} />
           </Route>
 
           <Route path='*' element={<>Requested page not found</>} />
