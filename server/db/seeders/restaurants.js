@@ -1,12 +1,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Restaurant', [{
+    await queryInterface.bulkInsert('Restaurants', [{
       name: '8MilePi Detroit',
       desc: 'Our pies are inspired by the famous pizzerias in Detroit Buddy and Luigi. Our thick rectangular pies are baked in special steel pans with mozzarella, brick cheese, the highest quality toppings, with our delicious homemade tomato sauce layered on top.',
       img: '/img/rest/8mile.jpg',
       away: true,
-      deliwery: true,
+      deliwery: false,
       pay: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -14,8 +14,8 @@ module.exports = {
     {
       name: 'KAIYŌ Rooftop',
       desc: 'KAIYŌ Rooftop is a tropical oasis in the sky, an immersive Nikkei experience that transports guests the moment they walk through the elevator door. Plants, rich textiles, colorful fabrics, soft lighting and stunning food/cocktails invite guests to explore the Japanese culinary influence within Peruvian culture.',
-      img: '/img/rest/KAIYŌ Rooftop.jpg',
-      away: true,
+      img: '/img/rest/KAIYŌRooftop.jpg',
+      away: false,
       deliwery: true,
       pay: true,
       createdAt: new Date(),
@@ -36,7 +36,7 @@ module.exports = {
       desc: 'Established in 2017. Four friends look to share their passion for great food, strong drinks, and the best beer and wine California has to offer.',
       img: '/img/rest/Snug.jpg',
       away: true,
-      deliwery: true,
+      deliwery: false,
       pay: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -56,7 +56,7 @@ module.exports = {
       desc: 'Lily in the sky, an immersive Nikkei experience that transports guests the moment they walk through the elevator door. Plants, rich textiles, colorful fabrics, soft lighting and stunning food/cocktails invite guests to explore the Japanese culinary influence within Peruvian culture.',
       img: '/img/rest/Lily.jpg',
       away: true,
-      deliwery: true,
+      deliwery: false,
       pay: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -75,7 +75,7 @@ module.exports = {
       name: 'Sotto Mare',
       desc: 'Established in 2017. Four friends look to share their passion for great food, strong drinks, and the best beer and wine California has to offer.',
       img: '/img/rest/SottoMare.jpg',
-      away: true,
+      away: false,
       deliwery: true,
       pay: true,
       createdAt: new Date(),
