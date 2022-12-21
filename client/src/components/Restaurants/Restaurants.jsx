@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Restaurants.module.css';
-// import Card from '../Card/Card';
 import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
 import BasicRating from '../../icons/restRating/restRating'
 import CheckIcon from '@mui/icons-material/Check';
@@ -18,17 +17,14 @@ export default function Restaurants() {
   const navigate = useNavigate();
 
   const [restaurant, setRestaurant] = React.useState([])
-  // console.log("restaurant=============>>>>>", restaurant)
 
   React.useEffect(() => {
     (async () => {
       try {
         const response = await fetch('http://localhost:3001/restaurants')
-        // console.log("response====================", response)
         if(response.ok) {
           const rest = await response.json();
           setRestaurant(rest.allRest)
-          // console.log("ЗАПИСАЛИ rest B setRestaurant============", rest)
           
         } else {
           console.log('ERROR! Fetch is no OK');
@@ -38,8 +34,6 @@ export default function Restaurants() {
       }
     })();
   }, [])
-
-  console.log("restaurant after useEffect=============>>>>>", restaurant)
 
   return (
 
@@ -57,10 +51,7 @@ export default function Restaurants() {
 
             restaurant.map((el) => (
 
-
-
                 <div className={styles.cards}>
-
 
                   <div className={styles.card}>
 
@@ -113,14 +104,7 @@ export default function Restaurants() {
                   </div>
 
                 </div>
-
-
-
             ))
-
-
-
-
 
           )
 
@@ -137,15 +121,9 @@ export default function Restaurants() {
           )}
 
         </div>
-          
-
-
-    </div>
-    
+    </div>  
     </>
-
   )
-  
 }
 
 

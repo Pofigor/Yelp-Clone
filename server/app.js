@@ -9,10 +9,8 @@ const morgan = require('morgan');
 
 const dbConnectionCheck = require('./src/lib/dbConnectionCheck');
 
-// const renderTemplate = require('./src/lib/renderTemplate');
-
 const homeRouter = require('./src/routers/homeRouter');
-const allRestRouter = require('./src/routers/moreRouter');
+const allRestRouter = require('./src/routers/restRouter');
 
 const app = express();
 
