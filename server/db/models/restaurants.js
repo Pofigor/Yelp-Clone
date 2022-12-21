@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     pay: DataTypes.BOOLEAN,
   }, {
     sequelize,
-    modelName: 'Restaurants',
+    modelName: 'Restaurant',
   });
   return Restaurant;
 };
