@@ -1,0 +1,17 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  max-height: 100vh;
+}
+
+.infoTitle {
+  text-align: center;
+  margin: 0 0 30px 0;
+  color: #a3a3a3;
+}
+
+.back {
+  display: flex;
+  cursor: pointer;
+}

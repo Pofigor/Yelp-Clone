@@ -1,0 +1,118 @@
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 100vh;
+  gap: 10px ;
+  margin-bottom: 50px;
+  margin-top: 84px;
+}
+
+.cardTitle {
+  margin: 0 0 30px 0;
+  color: #a3a3a3;
+}
+
+.card {
+  height: 440px;
+  width: 270px;
+  border: 1px solid #b9b9b95b;
+  border-radius: 10px;
+  padding: 10px 14px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0px 5px 20px #1976D23b;
+}
+
+.cardWrapper {
+  height: 410px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 4px;
+  /* border: 1px solid #b9b9b95b; */
+}
+
+.img {
+  height: 200px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.titleBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #8b8b8b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.description {
+  width: 100%;
+  height: 70px;
+  color: #727070;
+  overflow: hidden;
+  line-height: 22px;
+  text-align: justify;
+}
+
+.descParagraph {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bottomBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 130px;
+  height: 80px;
+}
+
+.CheckIcon {
+  color: #1976D2;
+  height: 8px;
+}
+
+.checkIconText {
+  color: #202020;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rightBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 130px;
+  height: 80px;
+  padding: 2px 0;
+}
+
+.restRating {
+  margin-bottom: 2px;
+}

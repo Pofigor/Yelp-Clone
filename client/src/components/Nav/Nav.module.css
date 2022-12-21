@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+.navBar {
+  margin-bottom: 50px;
+}
+
+.homeBtn {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.infoBtn {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sendBtn {
+  width: 140px !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.restLink {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 30px;
+}

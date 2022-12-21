@@ -7,6 +7,7 @@ module.exports = function Home() {
     <Layout>
       <h1>Home page</h1>
       <hr />
+
     </Layout>
   );
 };
