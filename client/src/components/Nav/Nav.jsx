@@ -30,7 +30,7 @@ export default function ButtonAppBar() {
 
           <div className={styles.rightDiv}>
  
-            <Link to='/login'><Button className={styles.sendBtn} variant="contained">Log in</Button></Link>
+            <Link to='/login'><Button className={styles.sendBtn} variant="outlined">Log in</Button></Link>
 
           </div>
 

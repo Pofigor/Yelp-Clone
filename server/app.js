@@ -9,10 +9,9 @@ const morgan = require('morgan');
 
 const dbConnectionCheck = require('./src/lib/dbConnectionCheck');
 
-// const renderTemplate = require('./src/lib/renderTemplate');
-
 const homeRouter = require('./src/routers/homeRouter');
-const allRestRouter = require('./src/routers/moreRouter');
+const allRestRouter = require('./src/routers/restRouter');
+const oneRestRouter = require('./src/routers/restRouter');
 
 const app = express();
 
@@ -33,6 +32,7 @@ dbConnectionCheck();
 
 app.use('/', homeRouter);
 app.use('/', allRestRouter);
+app.use('/', oneRestRouter);
 
 const PORT = process.env.PORT || 9999;
 // const { PORT, SESSION_SECRET } = process.env;
