@@ -10,10 +10,15 @@ export default function Info() {
 
 
   return (
+    <>
+    <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon/>Назад</div>
+    
     <div className={styles.infoContainer}>
-      <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon/>Назад</div>
-      <h1 className={styles.infoTitle}>Info page</h1>
+
+      <div className={styles.cardsContainer}></div>
+
     </div>
+    </>
   )
 }
 
