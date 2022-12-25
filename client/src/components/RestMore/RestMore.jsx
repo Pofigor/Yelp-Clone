@@ -4,8 +4,6 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { useNavigate, useParams } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import {Link} from 'react-router-dom'
-import {Button} from '@mui/material'
 import BasicRating from '../../icons/restRating/restRating'
 import CheckIcon from '@mui/icons-material/Check';
 import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'

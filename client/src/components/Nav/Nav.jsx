@@ -24,8 +24,6 @@ export default function ButtonAppBar() {
            
             <Link to='/restaurants' className={styles.restLink} color="inherit">Restaurants</Link>
 
-            <Link to='/info' className={styles.infoBtn} color="inherit">Info</Link>
-
           </div>
 
           <div className={styles.rightDiv}>

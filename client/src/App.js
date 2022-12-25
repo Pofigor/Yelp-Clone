@@ -2,7 +2,6 @@ import React from 'react';
 
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
-import Info from './components/Info/Info';
 import Login from './components/Login/Login';
 import Restaurants from './components/Restaurants/Restaurants';
 import RestMore from './components/RestMore/RestMore'
@@ -33,8 +32,6 @@ function App() {
             <Route path='/home/:id' element={<RestMore />}/>
           </Route>
 
-
-          <Route path='/info' element={<Info />} />
           <Route path='/login' element={<Login />} />
 
           <Route path='/restaurants'>
