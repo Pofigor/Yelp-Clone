@@ -136,6 +136,7 @@
 
 .back {
   display: flex;
+  width: 80px;
   cursor: pointer;
 }
 

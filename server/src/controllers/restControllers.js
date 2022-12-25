@@ -12,9 +12,7 @@ const getAllRest = async (req, res) => {
 const getOneRest = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log('id===================', id);
     const oneRest = await Restaurant.findOne({ where: { id }, raw: true });
-    console.log('oneRest=====>>>>', oneRest);
     res.json({ oneRest });
   } catch (error) {
     console.log('ERROR FIND ITEM FROM Restaurant DB', error);

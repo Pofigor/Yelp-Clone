@@ -26,7 +26,6 @@ export default function RestMore() {
         if(response.ok) {
           const oneRest = await response.json()
           setMore(oneRest.oneRest)
-          console.log("oneRest=============", oneRest)
         } else {
           console.log('ERROR! Fetch is no OK');
         }
@@ -35,7 +34,7 @@ export default function RestMore() {
       }
     })();
   }, []);
-  console.log("more===========", more)
+
   return (
 
     <>
@@ -56,44 +55,41 @@ export default function RestMore() {
 
                     <div className={styles.cardWrapper}>
 
-                      <div className={styles.img}>{<img className={styles.img} src={more.img} alt='img' />}</div>
+                      <div className={styles.topDiv}>
 
-                      <div className={styles.titleBox}>
-
-                        <div className={styles.title}>{more.name}</div>
-                        <div className={styles.favorite}><IconCheckboxes /></div>
-
-                      </div>
-
-                      <div className={styles.cardText}>
-
-                        <div className={styles.description}>
-                          <p className={styles.descParagraph}>{more.desc}</p>
+                        <div className={styles.leftDiv}>
+                          <div className={styles.img}>{<img className={styles.img} src={more.img} alt='img' />}</div>
                         </div>
 
-                      </div>
 
-                      <div className={styles.bottomBox}>
+                        <div className={styles.rightDiv}>
 
-                        <div className={styles.leftBox}>
+                          <div className={styles.titleBox}>
+                            <div className={styles.title}>{more.name}</div>
+                            <div className={styles.favorite}><IconCheckboxes /></div>
+                          </div>
 
-                          {/* <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
-                      <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
-                      <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p> */}
-                          <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Еда на вынос</span> </p>
-                          <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Доставка</span> </p>
-                          <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Оплата картой</span> </p>
-
-                        </div>
-
-                        <div className={styles.rightBox}>
+                          <div className={styles.cardText}>
+                              <p className={styles.descParagraph}>{more.desc}</p>
+                          </div>
 
                           <div className={styles.restRating}><BasicRating /></div>
 
-                          <Link to={`/restaurants/:id`}>
-                            <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
-                          </Link>
+                          
+                        </div>
 
+                      </div>
+                      <hr />
+                      <div className={styles.bottomDiv}>
+
+                        <div className={styles.first}></div>
+
+                        <div className={styles.second}></div>
+
+                        <div className={styles.third}>
+                          <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Еда на вынос</span> </p>
+                          <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Доставка</span> </p>
+                          <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Оплата картой</span> </p>
                         </div>
 
                       </div>
