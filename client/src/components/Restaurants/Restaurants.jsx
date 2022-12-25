@@ -1,14 +1,17 @@
 import React from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+
 import styles from './Restaurants.module.css';
+
 import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
 import BasicRating from '../../icons/restRating/restRating'
+
 import CheckIcon from '@mui/icons-material/Check';
-import {Link} from 'react-router-dom'
 import {Button} from '@mui/material'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { useNavigate } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+
 
 
 

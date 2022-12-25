@@ -17,23 +17,6 @@ import Container from '@mui/material/Container';
 
 function App() {
 
-  // const [restaurant, setRestaurant] = React.useState([])
-
-  // React.useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:3001/restaurants')
-  //       if (response.ok) {
-  //         const rest = await response.json();
-  //         setRestaurant(rest)
-  //       } else {
-  //         console.log('ERROR! Fetch is no OK');
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   })();
-  // }, [])
 
   return (
     <div className='app'>
@@ -45,10 +28,14 @@ function App() {
       <Container fixed>
         <Routes>
 
-          <Route path='/' element={<Home />} />
+          <Route path='/'>
+            <Route path='' element={<Home />}/>
+            <Route path='/home/:id' element={<RestMore />}/>
+          </Route>
+
+
           <Route path='/info' element={<Info />} />
           <Route path='/login' element={<Login />} />
-          {/* <Route path='/more' element={<RestMore />} /> */}
 
           <Route path='/restaurants'>
             <Route path='' element={<Restaurants />} />
