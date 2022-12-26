@@ -23,10 +23,31 @@ a {
 }
 
 
+.homeBtn:hover {
+  color: #fbff00;
+}
+
+
 .restBtn {
   color: #fff;
   text-decoration: none;
   margin-right: 30px;
+}
+
+.restBtn:hover {
+  color: #fbff00;
+}
+
+
+.favoriteBtn {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 50px;
+}
+
+
+.favoriteBtn:hover {
+  color: #fbff00;
 }
 
 
@@ -36,8 +57,21 @@ a {
   margin-right: 20px;
 }
 
+.loginIcon:hover {
+  color: #fbff00;
+}
+
 .registerIcon {
   color: #fff;
   text-decoration: none;
   margin-right: 20px;
 }
+
+.registerIcon:hover {
+  color: #fbff00;
+}
+
+
+
+
+

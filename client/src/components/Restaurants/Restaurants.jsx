@@ -14,9 +14,6 @@ import Box from '@mui/material/Box';
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 
-import  Search from '../Search/Search'
-
-
 
 export default function Restaurants() {
 
