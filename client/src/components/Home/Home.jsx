@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {Link} from 'react-router-dom';
 
@@ -11,12 +11,16 @@ import CheckIcon from '@mui/icons-material/Check';
 import {Button} from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import SearchIcon from '@mui/icons-material/Search';
+import ClearIcon from '@mui/icons-material/Clear';
 
-import  Search from '../Search/Search'
+export default function Home() { 
 
+  const [search, setSearch] = useState('')
 
-
-export default function Home({Search}) { 
+  const onChangeSearchInput = (event) => {
+    setSearch(event.target.value)
+  }
 
 
   const [restaurant, setRestaurant] = React.useState([])
@@ -40,7 +44,18 @@ export default function Home({Search}) {
     return (
       <>
 
-      {/* <Search/> */}
+      <div className={styles.searchContainer}>
+
+        <div className={styles.search}>
+          <div className={styles.searchIcon}><SearchIcon/></div> 
+          <input onChange={onChangeSearchInput} value={search} className={styles.searchInput} type="text" name='name' placeholder='Restaurants...' />
+          { search && (<div onClick={() => setSearch('')} className={styles.clearIcon}><ClearIcon/></div>) }
+        </div>
+
+        <p className={styles.searchTitle}>{search ? `Поиск по запросу: "${search}"` : 'All restaurants'}</p>
+
+      </div>
+      
       
       <div className={styles.homeContainer}>
   
@@ -50,7 +65,9 @@ export default function Home({Search}) {
   
             (
   
-              restaurant.map((el) => (
+              restaurant
+              .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+              .map((el) => (
   
                   <div className={styles.cards} key={el.id}>
   
