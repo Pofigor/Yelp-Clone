@@ -138,6 +138,7 @@
   display: flex;
   width: 80px;
   cursor: pointer;
+  color: #8b8b8b;
 }
 
 .loadingDiv {

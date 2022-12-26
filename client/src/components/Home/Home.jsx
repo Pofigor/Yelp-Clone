@@ -13,6 +13,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
+import  Filter from '../Filter/Filter'
+
 
 
 export default function Home() { 
@@ -40,7 +42,9 @@ export default function Home() {
 
     return (
       <>
-    
+
+      <Filter/>
+
       <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon />Назад</div>
       
       <div className={styles.homeContainer}>

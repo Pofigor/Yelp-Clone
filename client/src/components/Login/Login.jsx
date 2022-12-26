@@ -6,17 +6,23 @@ export default function Login() {
   return (
     <div className={styles.loginContainer}>
 
-      <h1 className={styles.loginTitle}>Login</h1>
+      <div className={styles.cardsContainer}>
 
-      <div className={styles.loginForm}>
 
-        <input type='email' styles={styles.loginInput} className='form-control' id='input' placeholder='email' name='email'/>
+        <h1 className={styles.loginTitle}>Login</h1>
+
+        <div className={styles.loginForm}>
+
+          <input type='email' styles={styles.loginInput} className='form-control' id='input' placeholder='email' name='email'/>
+          
+          <input type='password' styles={styles.passInput} className='form-control' id='input' placeholder='password' name='password'/>
+
+          <Button className={styles.sendBtn} variant="contained">Log in</Button>
         
-        <input type='password' styles={styles.passInput} className='form-control' id='input' placeholder='password' name='password'/>
-
-        <Button className={styles.sendBtn} variant="contained">Log in</Button>
+        </div>
+   
       </div>
-
+      
     </div>
   )
 }
