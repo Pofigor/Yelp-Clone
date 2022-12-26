@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 20px;
+  font-size: 22px;
   background-color: #0d6dfdea;
   width: 1150px;
   height: 80px;
@@ -22,10 +22,6 @@ a {
   margin-right: 30px;
 }
 
-/* .homeBtn:hover {
-  color: #fff;
-} */
-
 
 .restBtn {
   color: #fff;
@@ -33,28 +29,15 @@ a {
   margin-right: 30px;
 }
 
-/* .restBtn:hover {
-  color: #fff;
-} */
 
-
-
-.loginBtn {
+.loginIcon {
   color: #fff;
   text-decoration: none;
   margin-right: 20px;
 }
 
-/* .loginBtn:hover {
-  color: #fff;
-} */
-
-.registerBtn {
+.registerIcon {
   color: #fff;
   text-decoration: none;
   margin-right: 20px;
 }
-
-/* .registerBtn:hover {
-  color: #fff;
-} */

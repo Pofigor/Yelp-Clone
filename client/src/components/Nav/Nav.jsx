@@ -24,8 +24,8 @@ export default function ButtonAppBar() {
 
       <div className={styles.rightDiv}>
         
-        <Link to='/login' className={styles.loginBtn}><LoginIcon fontSize="large"/></Link>
-        <Link to='/register' className={styles.registerBtn}><AccountCircleIcon fontSize="large"/></Link>
+        <Link to='/login' className={styles.loginIcon}><LoginIcon fontSize="large"/></Link>
+        <Link to='/register' className={styles.registerIcon}><AccountCircleIcon fontSize="large"/></Link>
 
       </div>
 
