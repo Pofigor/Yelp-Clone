@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import styles from './Home.module.css';
 
@@ -9,17 +9,18 @@ import BasicRating from '../../icons/restRating/restRating'
 
 import CheckIcon from '@mui/icons-material/Check';
 import {Button} from '@mui/material'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-
-import  Filter from '../Filter/Filter'
-
-
+import SearchIcon from '@mui/icons-material/Search';
+import ClearIcon from '@mui/icons-material/Clear';
 
 export default function Home() { 
 
-  const navigate = useNavigate();
+  const [search, setSearch] = useState('')
+
+  const onChangeSearchInput = (event) => {
+    setSearch(event.target.value)
+  }
 
 
   const [restaurant, setRestaurant] = React.useState([])
@@ -43,9 +44,18 @@ export default function Home() {
     return (
       <>
 
-      <Filter/>
+      <div className={styles.searchContainer}>
 
-      <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon />Назад</div>
+        <div className={styles.search}>
+          <div className={styles.searchIcon}><SearchIcon/></div> 
+          <input onChange={onChangeSearchInput} value={search} className={styles.searchInput} type="text" name='name' placeholder='Restaurants...' />
+          { search && (<div onClick={() => setSearch('')} className={styles.clearIcon}><ClearIcon/></div>) }
+        </div>
+
+        <p className={styles.searchTitle}>{search ? `Поиск по запросу: "${search}"` : 'All restaurants'}</p>
+
+      </div>
+      
       
       <div className={styles.homeContainer}>
   
@@ -55,7 +65,9 @@ export default function Home() {
   
             (
   
-              restaurant.map((el) => (
+              restaurant
+              .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+              .map((el) => (
   
                   <div className={styles.cards} key={el.id}>
   
@@ -84,9 +96,6 @@ export default function Home() {
   
                           <div className={styles.leftBox}>
   
-                            {/* <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
-                        <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
-                        <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p> */}
                             <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Еда на вынос</span> </p>
                             <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Доставка</span> </p>
                             <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Оплата картой</span> </p>
