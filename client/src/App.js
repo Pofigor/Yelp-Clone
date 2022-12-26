@@ -6,11 +6,6 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Restaurants from './components/Restaurants/Restaurants';
 import RestMore from './components/RestMore/RestMore'
-import Filter from './components/Filter/Filter'
-
-
-
-// import styles from './App.module.css'
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -19,25 +14,18 @@ import Container from '@mui/material/Container';
 
 function App() {
 
-
   return (
     <div className='app'>
 
-      {/* <header> */}
-      {/* </header> */}
-     
-
       <Container fixed>
-        
+
         <Nav />
-        
-       
 
         <Routes>
 
           <Route path='/'>
-            <Route path='' element={<Home />}/>
-            <Route path='/home/:id' element={<RestMore />}/>
+            <Route path='' element={<Home />} />
+            <Route path='/home/:id' element={<RestMore />} />
           </Route>
 
           <Route path='/login' element={<Login />} />

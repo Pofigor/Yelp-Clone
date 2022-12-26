@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import styles from './Home.module.css';
 
@@ -9,7 +9,7 @@ import BasicRating from '../../icons/restRating/restRating'
 
 import CheckIcon from '@mui/icons-material/Check';
 import {Button} from '@mui/material'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
@@ -19,7 +19,7 @@ import  Filter from '../Filter/Filter'
 
 export default function Home() { 
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
 
   const [restaurant, setRestaurant] = React.useState([])
@@ -45,7 +45,7 @@ export default function Home() {
 
       <Filter/>
 
-      <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon />Назад</div>
+      {/* <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon />Назад</div> */}
       
       <div className={styles.homeContainer}>
   
