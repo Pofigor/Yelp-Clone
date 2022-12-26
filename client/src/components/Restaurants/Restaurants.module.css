@@ -31,11 +31,6 @@
   /* margin-bottom: 10px; */
 }
 
-.cardTitle {
-  margin: 0 0 30px 0;
-  color: #a3a3a3;
-}
-
 .card {
   height: 440px;
   width: 270px;
@@ -141,7 +136,9 @@
 
 .back {
   display: flex;
+  width: 80px;
   cursor: pointer;
+  color: #8b8b8b;
 }
 
 .loadingDiv {

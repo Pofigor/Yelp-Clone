@@ -2,10 +2,12 @@ import React from 'react';
 
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
-import Info from './components/Info/Info';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 import Restaurants from './components/Restaurants/Restaurants';
 import RestMore from './components/RestMore/RestMore'
+import Filter from './components/Filter/Filter'
+
 
 
 // import styles from './App.module.css'
@@ -17,38 +19,30 @@ import Container from '@mui/material/Container';
 
 function App() {
 
-  // const [restaurant, setRestaurant] = React.useState([])
-
-  // React.useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const response = await fetch('http://localhost:3001/restaurants')
-  //       if (response.ok) {
-  //         const rest = await response.json();
-  //         setRestaurant(rest)
-  //       } else {
-  //         console.log('ERROR! Fetch is no OK');
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   })();
-  // }, [])
 
   return (
     <div className='app'>
 
-      <header>
-        <Nav />
-      </header>
+      {/* <header> */}
+      {/* </header> */}
+     
 
       <Container fixed>
+        
+        <Nav />
+        
+       
+
         <Routes>
 
-          <Route path='/' element={<Home />} />
-          <Route path='/info' element={<Info />} />
+          <Route path='/'>
+            <Route path='' element={<Home />}/>
+            <Route path='/home/:id' element={<RestMore />}/>
+          </Route>
+
           <Route path='/login' element={<Login />} />
-          {/* <Route path='/more' element={<RestMore />} /> */}
+          <Route path='/register' element={<Register />} />
+
 
           <Route path='/restaurants'>
             <Route path='' element={<Restaurants />} />
