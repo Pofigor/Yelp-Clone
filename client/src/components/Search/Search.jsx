@@ -1,12 +1,12 @@
 import React from 'react';
 
-import styles from './Filter.module.css'
+import styles from './Search.module.css'
 
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function Filter() {
   return (
-    <div className={styles.filterContainer}>
+    <div className={styles.searchContainer}>
 
       <div className={styles.search}>
         <div className={styles.searchIcon}><SearchIcon/></div> 

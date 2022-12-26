@@ -12,7 +12,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-import  Filter from '../Filter/Filter'
+import  Search from '../Search/Search'
 
 
 
@@ -42,7 +42,7 @@ export default function Restaurants() {
 
     <>
 
-    <Filter />
+    <Search />
     
     <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon />Назад</div>
     

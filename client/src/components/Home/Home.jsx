@@ -9,17 +9,14 @@ import BasicRating from '../../icons/restRating/restRating'
 
 import CheckIcon from '@mui/icons-material/Check';
 import {Button} from '@mui/material'
-// import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-import  Filter from '../Filter/Filter'
+import  Search from '../Search/Search'
 
 
 
-export default function Home() { 
-
-  // const navigate = useNavigate();
+export default function Home({Search}) { 
 
 
   const [restaurant, setRestaurant] = React.useState([])
@@ -43,9 +40,7 @@ export default function Home() {
     return (
       <>
 
-      <Filter/>
-
-      {/* <div onClick={() => navigate(-1)} className={styles.back}><ChevronLeftIcon />Назад</div> */}
+      {/* <Search/> */}
       
       <div className={styles.homeContainer}>
   
@@ -84,9 +79,6 @@ export default function Home() {
   
                           <div className={styles.leftBox}>
   
-                            {/* <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
-                        <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
-                        <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p> */}
                             <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Еда на вынос</span> </p>
                             <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Доставка</span> </p>
                             <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Оплата картой</span> </p>
