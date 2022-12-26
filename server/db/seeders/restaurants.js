@@ -2,9 +2,9 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Restaurants', [{
-      name: '8MilePi Detroit',
-      desc: 'Our pies are inspired by the famous pizzerias in Detroit Buddy and Luigi. Our thick rectangular pies are baked in special steel pans with mozzarella, brick cheese, the highest quality toppings, with our delicious homemade tomato sauce layered on top.',
-      img: '/img/rest/8mile.jpg',
+      name: 'Beit Rima',
+      desc: 'Established in 2019. Since opening in 2019, Beit Rima has been voted Best New Restaurant by San Franciscans via SF Weekly and Top 100 Restaurant from the SF Chronicle along with rave reviews from food critics. In 2020, Beit Rima was recognized on a national level when we were listed as a semi finalist for Best New Restaurant via the prestigious James Beard Awards. Follow us on Instagram @beitrima to stay updated on seasonal specials! We look forward to having you!',
+      img: '/img/rest/BeitRima.jpg',
       away: true,
       deliwery: false,
       pay: true,
@@ -22,9 +22,9 @@ module.exports = {
       updatedAt: new Date(),
     },
     {
-      name: 'KFC',
-      desc: 'KFC Corporation, based in Louisville, Kentucky, is one of the few brands in America that can boast a rich, decades-long history of success and innovation. It all started with one cook who created a soon-to-be world-famous recipe more than 70 years ago, a list of secret herbs and spices scratched out on the back of the door to his kitchen. That cook was Colonel Harland Sanders, of course, and now KFC is the world most popular chicken restaurant chain, specializing in that same Original Recipe® along with Extra Crispy™ chicken, home-style sides, and buttermilk biscuits. ',
-      img: '/img/rest/kfc.jpg',
+      name: 'Loquat',
+      desc: 'Loquat Corporation, based in Louisville, Kentucky, is one of the few brands in America that can boast a rich, decades-long history of success and innovation. It all started with one cook who created a soon-to-be world-famous recipe more than 70 years ago, a list of secret herbs and spices scratched out on the back of the door to his kitchen. That cook was Colonel Harland Sanders, of course, and now KFC is the world most popular chicken restaurant chain, specializing in that same Original Recipe® along with Extra Crispy™ chicken, home-style sides, and buttermilk biscuits. ',
+      img: '/img/rest/Loquat.jpg',
       away: true,
       deliwery: true,
       pay: true,

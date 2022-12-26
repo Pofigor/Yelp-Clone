@@ -6,6 +6,7 @@ import styles from './Nav.module.css'
 
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LoginIcon from '@mui/icons-material/Login';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 
 
@@ -20,10 +21,13 @@ export default function ButtonAppBar() {
 
         <Link to='/restaurants' className={styles.restBtn}>Restaurants</Link>
 
+
+
       </div>
 
       <div className={styles.rightDiv}>
         
+        <Link to='/favorite' className={styles.favoriteBtn}><BookmarksIcon sx={{ fontSize: 30 }}/></Link>
         <Link to='/login' className={styles.loginIcon}><LoginIcon fontSize="large"/></Link>
         <Link to='/register' className={styles.registerIcon}><AccountCircleIcon fontSize="large"/></Link>
 
