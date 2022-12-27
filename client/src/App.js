@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
@@ -16,6 +16,9 @@ import Container from '@mui/material/Container';
 
 function App() {
 
+  const [search, setSearch] = useState('');
+
+
   return (
     <div className='app'>
 
@@ -26,14 +29,14 @@ function App() {
         <Routes>
 
           <Route path='/'>
-            <Route path='' element={<Home />} />
+            <Route path='' element={<Home search={search} setSearch={setSearch} />} />
             <Route path='/home/:id' element={<RestMore />} />
           </Route>
 
 
 
           <Route path='/restaurants'>
-            <Route path='' element={<Restaurants />} />
+            <Route path='' element={<Restaurants search={search} setSearch={setSearch}/>} />
             <Route path='/restaurants/:id' element={<RestMore />} />
           </Route>
 
