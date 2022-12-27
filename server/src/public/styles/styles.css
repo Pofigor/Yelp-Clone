@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+}
+
+.home,
+.login,
+.register {
+  text-decoration: none;
+  color: #1862ec;
+  margin-right: 30px;
+}
+
+
+
+h1 {
+  color: #e91010;
+}
+
+.loginLabel,
+.passwordLabel,
+h2,
+h1 {
+  color: #1862ec;
+  margin-right: 5px;
+}
+
+.loginBtn {
+  background-color: #1862ec;
+  color: #fff;
+  margin-left: 20px;
+  border-color: #1862ec;
+  border-radius: 5px;
+}
+
+.loginInput,
+.passwordInput {
+  border-color: #1862ec;
+  border-radius: 5px;
+}
