@@ -1,58 +1,61 @@
-import React from 'react';
-import styles from './Card.module.css'
-import {Button} from '@mui/material'
-// import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-// import PaymentIcon from '@mui/icons-material/Payment';
-// import TakeoutDiningIcon from '@mui/icons-material/TakeoutDining';
-// import { Link } from 'react-router-dom';
-import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
-import BasicRating from '../../icons/restRating/restRating'
-import CheckIcon from '@mui/icons-material/Check';
+import React, {useState} from 'react';
+
 import {Link} from 'react-router-dom'
 
-export default function Card() {
+import BasicRating from '../../icons/restRating/restRating'
 
-  // const [restaurants, setRestaurants] = React.useState([])
+import CheckIcon from '@mui/icons-material/Check';
+import {Button} from '@mui/material'
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
-  // React.useEffect(() => {
-  //  (async function getRestaurant() {
-  //     const restaurant = await fetch('http://localhost:/3001/restaurants')
-  //     const res = await restaurant.json();
-  //     console.log('res====', res);
-  //   })() 
-  // })
+import styles from './Card.module.css'
 
-  // const moreHandler = () => {
-  //   console.log('Pressed button!!!');
-  // } 
+
+
+export default function Card({el}) {
+
+  const [isFaforite, setIsFavorite] = useState(false);
+
+ const onClickFavorite = () => {
+    setIsFavorite(!isFaforite)
+  }
 
 
   return (
 
-    <div className={styles.cardContainer}>
-
-      {/* <h1 className={styles.cardTitle}>Card</h1> */}
-
+    <div className={styles.cards} key={el.id}>
+  
       <div className={styles.card}>
 
-        <div className={styles.cardWrapper} > 
+        <div className={styles.cardWrapper}>
 
-          <div className={styles.img}><img className={styles.img} src='/img/rest/Lily.jpg' alt='img' /></div>
+          <div className={styles.img}>{<img className={styles.img} src={el.img} alt='img' />}</div>
 
           <div className={styles.titleBox}>
 
-            <div className={styles.title}>Lily restaurant</div>
-            <div className={styles.favorite}><IconCheckboxes/></div>
+            <div className={styles.title}>{el.name}
+            </div>
+
+
+            <div className={styles.favoriteDiv} onClick={onClickFavorite}>
+              
+              {
+              isFaforite ? 
+              (<div className={styles.favoriteTrue}><BookmarkIcon /></div>) 
+              :
+              (<div className={styles.favoriteFalse}><BookmarkBorderIcon /></div>)
+              }
+
+            </div>
 
           </div>
-          
+
+
           <div className={styles.cardText}>
-          
+
             <div className={styles.description}>
-              <p className={styles.descParagraph}>Некоторое описание данного ресторана. 
-                Меню представлено европейской кухней. Возможность заказа фирменного блюда от шеф-повара.
-                Проведение корпоративов и прочих мероприятий.
-              </p>
+              <p className={styles.descParagraph}>{el.desc}</p>
             </div>
 
           </div>
@@ -61,20 +64,17 @@ export default function Card() {
 
             <div className={styles.leftBox}>
 
-              {/* <p className={styles.tooltip}><TakeoutDiningIcon/> <span className={styles.tooltiptext}>Еда на вынос</span> </p>
-              <p className={styles.tooltip}><DeliveryDiningIcon/> <span className={styles.tooltiptext}>Доставка</span> </p>
-              <p className={styles.tooltip}><PaymentIcon/> <span className={styles.tooltiptext}>Оплата картой</span> </p> */}
-              <p className={styles.CheckIcon}><CheckIcon/><span className={styles.checkIconText}>Еда на вынос</span> </p>
-              <p className={styles.CheckIcon}><CheckIcon/><span className={styles.checkIconText}>Доставка</span> </p>
-              <p className={styles.CheckIcon}><CheckIcon/><span className={styles.checkIconText}>Оплата картой</span> </p>
+              <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Еда на вынос</span> </p>
+              <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Доставка</span> </p>
+              <p className={styles.CheckIcon}><CheckIcon /><span className={styles.checkIconText}>Оплата картой</span> </p>
 
             </div>
 
             <div className={styles.rightBox}>
 
-              <div className={styles.restRating}><BasicRating/></div>
+              <div className={styles.restRating}><BasicRating /></div>
 
-              <Link to={`/restaurants/:id`}>
+              <Link to={`/restaurants/${el.id}`}>
                 <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
               </Link>
 
@@ -82,12 +82,10 @@ export default function Card() {
 
           </div>
 
-
-
         </div>
 
       </div>
-      
+
     </div>
   )
 }

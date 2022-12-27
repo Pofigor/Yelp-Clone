@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import styles from './Search.module.css'
 
 import SearchIcon from '@mui/icons-material/Search';
 import ClearIcon from '@mui/icons-material/Clear';
 
-export default function Search() {
+export default function Search({search, setSearch}) {
 
-  const [search, setSearch] = useState('')
 
   const onChangeSearchInput = (event) => {
     setSearch(event.target.value)
