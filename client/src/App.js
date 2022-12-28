@@ -23,15 +23,15 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch('/isauth');
+        const response = await fetch('http://localhost:3001/isauth')
         if (response.ok) {
-          setAuth((prevAuth) => !prevAuth)
+          setAuth((prev) => !prev)
         }
       } catch (error) {
         console.log('ERROR authorization!', error);
       }
     })()
-  }, [])
+  }, [auth]);
 
 
   return (
@@ -57,6 +57,7 @@ function App() {
 
           <Route path='/login' element={<Login setAuth={setAuth} />} />
           <Route path='/register' element={<Register setAuth={setAuth} />} />
+
 
           <Route path='/favorite' element={<Favorite />} />
 

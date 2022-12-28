@@ -15,7 +15,7 @@ const homeRouter = require('./src/routers/homeRouter');
 const allRestRouter = require('./src/routers/restRouter');
 const oneRestRouter = require('./src/routers/restRouter');
 
-const authRouter = require('./src/routers/authRouter');
+// const authRouter = require('./src/routers/authRouter');
 const regRouter = require('./src/routers/regRouter');
 const loginRouter = require('./src/routers/loginRouter');
 
@@ -59,7 +59,7 @@ app.use('/', homeRouter);
 app.use('/', allRestRouter);
 app.use('/', oneRestRouter);
 
-app.use('/', authRouter);
+// app.use('/', authRouter); // надо ли??????
 app.use('/', regRouter);
 app.use('/', loginRouter);
 
@@ -68,14 +68,20 @@ app.get('/logout', async (req, res) => {
     if (req.session.newUser) {
       req.session.destroy(() => {
         res.clearCookie('yelpCookie');
-        res.redirect('/');
+        res.sendStatus(200);
+        // res.redirect('/');
       });
-    } else {
-      res.redirect('/login');
     }
   } catch (error) {
     console.log('Error destroy session', error);
   }
+});
+
+app.get('/isauth', (req, res) => {
+  if (req.session?.newUser) {
+    return res.sendStatus(200);
+  }
+  res.sendStatus(400);
 });
 
 app.listen(PORT, () => {
