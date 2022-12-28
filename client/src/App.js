@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
@@ -18,13 +18,28 @@ function App() {
 
   const [search, setSearch] = useState('');
 
+  const [auth, setAuth] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await fetch('/isauth');
+        if (response.ok) {
+          setAuth((prevAuth) => !prevAuth)
+        }
+      } catch (error) {
+        console.log('ERROR authorization!', error);
+      }
+    })()
+  }, [])
+
 
   return (
     <div className='app'>
 
       <Container fixed>
 
-        <Nav />
+        <Nav auth={auth} setAuth={setAuth} />
 
         <Routes>
 
@@ -36,12 +51,12 @@ function App() {
 
 
           <Route path='/restaurants'>
-            <Route path='' element={<Restaurants search={search} setSearch={setSearch}/>} />
+            <Route path='' element={<Restaurants search={search} setSearch={setSearch} />} />
             <Route path='/restaurants/:id' element={<RestMore />} />
           </Route>
 
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login setAuth={setAuth} />} />
+          <Route path='/register' element={<Register setAuth={setAuth} />} />
 
           <Route path='/favorite' element={<Favorite />} />
 

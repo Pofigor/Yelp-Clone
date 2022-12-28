@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Register.module.css'
 import {Button} from '@mui/material'
 
-export default function Register() {
+export default function Register({setAuth}) {
   return (
     <div className={styles.registerContainer}>
 

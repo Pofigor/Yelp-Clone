@@ -5,7 +5,7 @@ const router = express.Router();
 const { renderRegister, registerUser } = require('../controllers/regControllers');
 
 router
-  .get('/', renderRegister)
-  .post('/', registerUser);
+  .get('/register', renderRegister)
+  .post('/register', registerUser);
 
 module.exports = router;

@@ -15,6 +15,7 @@ const homeRouter = require('./src/routers/homeRouter');
 const allRestRouter = require('./src/routers/restRouter');
 const oneRestRouter = require('./src/routers/restRouter');
 
+const authRouter = require('./src/routers/authRouter');
 const regRouter = require('./src/routers/regRouter');
 const loginRouter = require('./src/routers/loginRouter');
 
@@ -58,8 +59,9 @@ app.use('/', homeRouter);
 app.use('/', allRestRouter);
 app.use('/', oneRestRouter);
 
-app.use('/register', regRouter);
-app.use('/login', loginRouter);
+app.use('/', authRouter);
+app.use('/', regRouter);
+app.use('/', loginRouter);
 
 app.get('/logout', async (req, res) => {
   try {
