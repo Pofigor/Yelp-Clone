@@ -61,6 +61,17 @@ a {
   color: #fbff00;
 }
 
+.logoutIcon {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.logoutIcon:hover {
+  color: #fbff00;
+}
+
 .registerIcon {
   color: #fff;
   text-decoration: none;
@@ -70,8 +81,3 @@ a {
 .registerIcon:hover {
   color: #fbff00;
 }
-
-
-
-
-

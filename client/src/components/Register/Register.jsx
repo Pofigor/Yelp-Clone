@@ -47,11 +47,11 @@ export default function Register({setAuth}) {
 
         <form className={styles.registerForm} onSubmit={submitHandler}>
 
-          <input onChange={inputHandler} value={inputs.name} name='name' type='text' styles={styles.registerName} className='form-control' id='input' placeholder='name'/>
+          <input onChange={inputHandler} value={inputs.name} name='name' type='text' styles={styles.registerName} className='form-control' placeholder='name'/>
 
-          <input onChange={inputHandler} value={inputs.email} name='email' type='email' styles={styles.registerInput} className='form-control' id='input' placeholder='email'/>
+          <input onChange={inputHandler} value={inputs.email} name='email' type='email' styles={styles.registerInput} className='form-control' placeholder='email'/>
           
-          <input onChange={inputHandler} value={inputs.password} name='password' type='password' styles={styles.passInput} className='form-control' id='input' placeholder='password'/>
+          <input onChange={inputHandler} value={inputs.password} name='password' type='password' styles={styles.passInput} className='form-control' placeholder='password'/>
 
           <Button type = "submit" className={styles.sendBtn} variant="contained">Registration</Button>
         

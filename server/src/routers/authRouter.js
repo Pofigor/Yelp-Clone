@@ -1,9 +1,9 @@
-const express = require('express');
+// const express = require('express');
 
-const router = express.Router();
+// const router = express.Router();
 
-const { isAuth } = require('../controllers/authController');
+// const { isAuth } = require('../controllers/authController');
 
-router.get('/isauth', isAuth);
+// router.get('/isauth', isAuth);
 
-module.exports = router;
+// module.exports = router;
