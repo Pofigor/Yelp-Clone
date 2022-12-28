@@ -15,6 +15,9 @@ const homeRouter = require('./src/routers/homeRouter');
 const allRestRouter = require('./src/routers/restRouter');
 const oneRestRouter = require('./src/routers/restRouter');
 
+const regRouter = require('./src/routers/regRouter');
+const loginRouter = require('./src/routers/loginRouter');
+
 const app = express();
 
 const corsOptions = {
@@ -54,6 +57,9 @@ dbConnectionCheck();
 app.use('/', homeRouter);
 app.use('/', allRestRouter);
 app.use('/', oneRestRouter);
+
+app.use('/register', regRouter);
+app.use('/login', loginRouter);
 
 app.get('/logout', async (req, res) => {
   try {
