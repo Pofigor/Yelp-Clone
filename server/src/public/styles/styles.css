@@ -16,15 +16,18 @@ h1 {
   color: #e91010;
 }
 
+.emailLabel,
 .loginLabel,
 .passwordLabel,
+.nameLabel,
 h2,
 h1 {
   color: #1862ec;
   margin-right: 5px;
 }
 
-.loginBtn {
+.loginBtn,
+.formBtn {
   background-color: #1862ec;
   color: #fff;
   margin-left: 20px;
@@ -32,8 +35,9 @@ h1 {
   border-radius: 5px;
 }
 
-.loginInput,
-.passwordInput {
+.emailInput,
+.passwordInput,
+.nameInput {
   border-color: #1862ec;
   border-radius: 5px;
 }
