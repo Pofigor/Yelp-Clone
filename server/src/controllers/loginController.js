@@ -16,7 +16,9 @@ const loginUser = async (req, res) => {
     const user = await User.findOne({ where: { email } });
     const passCheck = await bcrypt.compare(password, user.password);
     if (passCheck) {
-      req.session.newUser = user.email;
+      req.session.userName = user.name;
+      req.session.userEmail = user.email;
+      // console.log('=====Авторизация loginController ====> req.session', req.session);
       req.session.save(() => {
         res.redirect('/');
       });

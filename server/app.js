@@ -15,7 +15,6 @@ const homeRouter = require('./src/routers/homeRouter');
 const allRestRouter = require('./src/routers/restRouter');
 const oneRestRouter = require('./src/routers/restRouter');
 
-// const authRouter = require('./src/routers/authRouter');
 const regRouter = require('./src/routers/regRouter');
 const loginRouter = require('./src/routers/loginRouter');
 
@@ -59,13 +58,21 @@ app.use('/', homeRouter);
 app.use('/', allRestRouter);
 app.use('/', oneRestRouter);
 
-// app.use('/', authRouter); // надо ли??????
 app.use('/', regRouter);
 app.use('/', loginRouter);
 
+app.get('/isauth', (req, res) => {
+  // console.log('isAuth==== в App.js на бэке => req.session', req.session);
+  if (req.session?.userEmail) {
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(401);
+  }
+});
+
 app.get('/logout', async (req, res) => {
   try {
-    if (req.session.newUser) {
+    if (req.session?.userName) {
       req.session.destroy(() => {
         res.clearCookie('yelpCookie');
         res.sendStatus(200);
@@ -75,13 +82,6 @@ app.get('/logout', async (req, res) => {
   } catch (error) {
     console.log('Error destroy session', error);
   }
-});
-
-app.get('/isauth', (req, res) => {
-  if (req.session?.newUser) {
-    return res.sendStatus(200);
-  }
-  res.sendStatus(400);
 });
 
 app.listen(PORT, () => {

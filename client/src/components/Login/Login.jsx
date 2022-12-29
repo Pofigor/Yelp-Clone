@@ -13,8 +13,8 @@ export default function Login({setAuth}) {
   const navigate = useNavigate();
 
   const inputHandler = (event) => {
-    setInputs((prev) => (
-      {...prev, [event.target.name]: event.target.value}
+    setInputs((prevInputs) => (
+      {...prevInputs, [event.target.name]: event.target.value}
     ));
   };
 
@@ -45,7 +45,7 @@ export default function Login({setAuth}) {
 
         <form className={styles.loginForm} onSubmit={submitHandler}>
 
-          <input type='email' onChange={inputHandler} value={inputs.name} name='email' styles={styles.loginInput} className='form-control' placeholder='email'/>
+          <input type='email' onChange={inputHandler} value={inputs.email} name='email' styles={styles.loginInput} className='form-control' placeholder='email'/>
           
           <input type='password' onChange={inputHandler} value={inputs.password} name='password' styles={styles.passInput} className='form-control' placeholder='password'/>
 
