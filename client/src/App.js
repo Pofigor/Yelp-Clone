@@ -23,15 +23,18 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch('http://localhost:3001/isauth')
+        const response = await fetch('http://localhost:3001/isauth', {
+          method: 'GET',
+          credentials: 'include'
+        })
+        
         if (response.ok) {
-          setAuth((prev) => !prev)
+          setAuth(true)
         }
       } catch (error) {
         console.log('ERROR authorization!', error);
       }
-    })()
-  }, [auth]);
+    })()}, []);
 
 
   return (
