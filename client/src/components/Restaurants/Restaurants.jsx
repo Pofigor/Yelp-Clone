@@ -51,7 +51,9 @@ export default function Restaurants({search, setSearch}) {
 
             restaurant
             .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
-            .map((el) => <Card el={el} key={el.id} restourant_id={el.id}/>)
+            // .map((el) => <Card el={el} key={el.id} restourant_id={el.id}/>)
+            .map((el) => <Card el={el} key={el.id} />)
+
 
           )
 

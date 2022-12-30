@@ -14,7 +14,9 @@ import styles from './Card.module.css'
 
 
 
-export default function Card({el, auth, setAuth, restourant_id}) {
+export default function Card({el, auth, setAuth}) {
+// export default function Card({el, auth, setAuth, restourant_id}) {
+
 
 const [isFaforite, setIsFavorite] = useState(false);
 
@@ -91,8 +93,10 @@ const [isFaforite, setIsFavorite] = useState(false);
 
 
             <div className={styles.rightBox}>
+              {/* //////первая строчка - базовая, отображает рейтинг. Вторая - вариант, пробовал, оставил на всякий случай */}
+              {/* <div className={styles.restRating}><BasicRating /></div> */} 
+              {/* <div className={styles.restRating}><BasicRating restourant_id={restourant_id}/></div> */}
 
-              <div className={styles.restRating}><BasicRating restourant_id={restourant_id}/></div>
 
               <Link to={`/restaurants/${el.id}`}>
                 <Button className={styles.moreBtn} variant="outlined">VIEW MORE</Button>
