@@ -91,7 +91,13 @@
   height: 8px;
 }
 
-.checkIconText {
+.ClearIcon {
+  color: #d21919;
+  height: 8px;
+}
+
+.checkIconText, 
+.clearIconText {
   color: #202020;
   font-size: 12px;
   font-weight: 500;

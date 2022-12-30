@@ -1,31 +1,53 @@
-import * as React from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-// import Typography from '@mui/material/Typography';
 
-export default function BasicRating() {
-  const [value, setValue] = React.useState(4);
+export default function BasicRating({restourant_id}) {
+
+  const [value, setValue] = React.useState(3);
+    console.log("value FROM STATE =====", value)
+
+
+  const onChangeRatingValue = (event) => {
+    setValue((prev) => (
+      {...prev, [event.target.name]: event.target.value}
+    ));
+    console.log("event.target.value=============", event.target)
+  };
+
+
+  const onClickRating = async (event) => {
+    event.preventDefault();
+
+    await fetch ('http://localhost:3001/rating', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({restourant_id}, value)
+    });
+      console.log("value FROM STATE =====", value)
+
+    // console.log("value=====", value)
+    // console.log("restourant_id===============", restourant_id)
+
+  }
+
+
 
   return (
     <Box
+    
       sx={{
         '& > legend': { mt: 4 },
-      }}
-    >
-      {/* <Typography component="legend">Controlled</Typography> */}
-      <Rating
-        name="simple-controlled"
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
-      />
-      {/* <Typography component="legend">Read only</Typography>
-      <Rating name="read-only" value={value} readOnly />
-      <Typography component="legend">Disabled</Typography>
-      <Rating name="disabled" value={value} disabled />
-      <Typography component="legend">No rating given</Typography> */}
-      {/* <Rating name="no-value" value={null} /> */}
+      }}>
+
+      <Rating onClick={onClickRating} name="value" value={value} onChange={onChangeRatingValue} />
+      {/* <Rating onClick={onClickRating} name="value" value={value} onChange={(event, newValue) => {setValue(newValue)}} /> */}
+
+ 
     </Box>
   );
+
 }
