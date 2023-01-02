@@ -47,7 +47,7 @@ function App() {
         <Routes>
 
           <Route path='/'>
-            <Route path='' element={<Home search={search} setSearch={setSearch} />} />
+            <Route path='' element={<Home search={search} setSearch={setSearch}/>} />
             <Route path='/home/:id' element={<RestMore />} />
           </Route>
 
@@ -62,7 +62,7 @@ function App() {
           <Route path='/register' element={<Register setAuth={setAuth} />} />
 
 
-          <Route path='/favorite' element={<Favorite />} />
+          <Route path='/favorite' element={<Favorite search={search} setSearch={setSearch}/>} />
 
           <Route path='*' element={<>Requested page not found</>} />
 
