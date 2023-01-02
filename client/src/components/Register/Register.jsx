@@ -30,7 +30,7 @@ export default function Register({setAuth}) {
     });
 
     if (response.ok) {
-      setAuth(false);      
+      setAuth(false);
       navigate('/login');
     }
   };

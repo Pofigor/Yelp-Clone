@@ -4,7 +4,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { useNavigate, useParams } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import BasicRating from '../../icons/restRating/restRating'
+import BasicRating from '../../icons/BasicRating/BasicRating'
 import CheckIcon from '@mui/icons-material/Check';
 import IconCheckboxes from '../../icons/checkBoxFavourite/checkBoxFavourite'
 
@@ -71,6 +71,7 @@ export default function RestMore() {
                               <p className={styles.descParagraph}>{more.desc}</p>
                           </div>
 
+                          {/* <div className={styles.restRating}><BasicRating /></div> */}
                           <div className={styles.restRating}><BasicRating /></div>
 
                           

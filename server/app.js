@@ -18,6 +18,8 @@ const oneRestRouter = require('./src/routers/restRouter');
 const regRouter = require('./src/routers/regRouter');
 const loginRouter = require('./src/routers/loginRouter');
 
+const ratingRouter = require('./src/routers/raitingRouter');
+
 const app = express();
 
 const corsOptions = {
@@ -60,6 +62,8 @@ app.use('/', oneRestRouter);
 
 app.use('/', regRouter);
 app.use('/', loginRouter);
+
+app.use('/', ratingRouter);
 
 app.get('/isauth', (req, res) => {
   // console.log('isAuth==== в App.js на бэке => req.session', req.session);
