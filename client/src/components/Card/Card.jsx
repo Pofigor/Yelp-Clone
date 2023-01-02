@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {Link} from 'react-router-dom'
 
-import BasicRating from '../../icons/restRating/restRating'
+import BasicRating from '../../icons/BasicRating/BasicRating'
 
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -13,16 +13,36 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import styles from './Card.module.css'
 
 
-
-export default function Card({el, auth, setAuth}) {
-// export default function Card({el, auth, setAuth, restourant_id}) {
+export default function Card({el, restourant_id}) {
 
 
 const [isFaforite, setIsFavorite] = useState(false);
 
- const onClickFavorite = () => {
-    setIsFavorite(!isFaforite)
-  }
+// const [value, setValue] = useState(2);
+// console.log("value STATE===>>>>", value)
+
+
+const onClickFavorite = () => {
+  setIsFavorite(!isFaforite)
+}
+
+
+// useEffect(() => {
+//   (async () => {
+//    try {
+//     fetch ('http://localhost:3001/rating', {
+//       method: 'POST',
+//       credentials: 'include',
+//       headers: {
+//         'Content-type': 'application/json',
+//       },
+//       body: JSON.stringify({restourant_id, value})
+//     });
+//    } catch (error) {
+//     console.log(error);
+//    }
+//   })()}, [value]);
+
 
 
   return (
@@ -93,9 +113,8 @@ const [isFaforite, setIsFavorite] = useState(false);
 
 
             <div className={styles.rightBox}>
-              {/* //////первая строчка - базовая, отображает рейтинг. Вторая - вариант, пробовал, оставил на всякий случай */}
-              {/* <div className={styles.restRating}><BasicRating /></div> */} 
-              {/* <div className={styles.restRating}><BasicRating restourant_id={restourant_id}/></div> */}
+
+              <div className={styles.restRating}><BasicRating restourant_id={restourant_id}/></div> 
 
 
               <Link to={`/restaurants/${el.id}`}>

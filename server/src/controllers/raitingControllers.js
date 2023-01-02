@@ -4,8 +4,9 @@ const addRating = async (req, res) => {
   try {
     // eslint-disable-next-line camelcase
     const { restourant_id, value } = req.body;
-    // console.log('value=====', value);
-    // console.log('restourant_id===============', restourant_id);
+    console.log('req.body=====>>>>>>', req.body);
+    // const { userEmail } = req.session.userEmail;
+    // if (userEmail === )
     // eslint-disable-next-line camelcase
     await Rating.create({ restourant_id, rating: value });
     res.sendStatus(200);

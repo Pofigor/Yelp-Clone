@@ -12,23 +12,24 @@ import Search from '../Search/Search'
 export default function Home({search, setSearch}) { 
 
 
-  const [restaurant, setRestaurant] = useState([]);
+const [restaurant, setRestaurant] = useState([]);
+ 
 
-  React.useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch('http://localhost:3001/restaurants')
-        if(response.ok) {
-          const rest = await response.json();
-          setRestaurant(rest.allRest)
-        } else {
-          console.log('ERROR! Fetch is no OK');
-        }
-      } catch (error) {
-        console.log(error);
+React.useEffect(() => {
+  (async () => {
+    try {
+      const response = await fetch('http://localhost:3001/restaurants')
+      if(response.ok) {
+        const rest = await response.json();
+        setRestaurant(rest.allRest)
+      } else {
+        console.log('ERROR! Fetch is no OK');
       }
-    })();
-  }, [])
+    } catch (error) {
+      console.log(error);
+    }
+  })();
+}, [])
 
     return (
       <>
@@ -46,9 +47,7 @@ export default function Home({search, setSearch}) {
   
               restaurant
               .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
-              // .map((el) => <Card el={el} key={el.id} restourant_id={el.id}/>)
-              .map((el) => <Card el={el} key={el.id}/>)
-
+              .map((el) => <Card el={el} key={el.id} restourant_id={el.id}/>)
   
             )
   
