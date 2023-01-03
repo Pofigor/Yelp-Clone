@@ -4,13 +4,9 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate() {
-      // this.belongsTo(Restaurants, { foreignKey: 'user_id' });
+    static associate({ Favorite, Rating }) {
+      this.belongsTo(Rating, { foreignKey: 'user_id' });
+      this.belongsTo(Favorite, { foreignKey: 'user_id' });
     }
   }
   User.init({

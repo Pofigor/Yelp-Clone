@@ -4,6 +4,9 @@ import Rating from '@mui/material/Rating';
 
 export default function BasicRating({restourant_id, value, setValue}) {
 
+// все раюотает, рейтинг записывается в бд, но сам подход неверный
+// нужно переработать так, чтобы на главной карточке рейтинг был неактивен
+// а внутри, где пишем отзыв, там можно было бы поставить рейтинг
 
 const onChangeRating = (event, newValue) => {
   setValue(newValue);
