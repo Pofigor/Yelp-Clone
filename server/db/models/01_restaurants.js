@@ -4,8 +4,9 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Restaurant extends Model {
-    static associate({ Rating }) {
+    static associate({ Rating, Favorite }) {
       this.hasMany(Rating, { foreignKey: 'restourant_id' });
+      this.hasMany(Favorite, { foreignKey: 'restourant_id' });
     }
   }
   Restaurant.init({
