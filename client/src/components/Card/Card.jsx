@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {Link} from 'react-router-dom'
 
@@ -18,30 +18,31 @@ export default function Card({el, restourant_id}) {
 
 const [isFaforite, setIsFavorite] = useState(false);
 
-// const [value, setValue] = useState(2);
-// console.log("value STATE===>>>>", value)
+const [value, setValue] = useState(2);
+
+
+
+// useEffect(() => {
+//   (async () => {
+//     try {
+//       const response = await fetch ('http://localhost:3001/rating')
+//       if (response.ok) {
+//         const rating = await response.json();
+//         console.log("rating++>>", rating)
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   })();
+// }, [])
+
+
+
 
 
 const onClickFavorite = () => {
   setIsFavorite(!isFaforite)
 }
-
-
-// useEffect(() => {
-//   (async () => {
-//    try {
-//     fetch ('http://localhost:3001/rating', {
-//       method: 'POST',
-//       credentials: 'include',
-//       headers: {
-//         'Content-type': 'application/json',
-//       },
-//       body: JSON.stringify({restourant_id, value})
-//     });
-//    } catch (error) {
-//     console.log(error);
-//    }
-//   })()}, [value]);
 
 
 
@@ -114,7 +115,7 @@ const onClickFavorite = () => {
 
             <div className={styles.rightBox}>
 
-              <div className={styles.restRating}><BasicRating restourant_id={restourant_id}/></div> 
+              <div className={styles.restRating}><BasicRating restourant_id={restourant_id} value={value} setValue={setValue}/></div> 
 
 
               <Link to={`/restaurants/${el.id}`}>
@@ -132,4 +133,5 @@ const onClickFavorite = () => {
     </div>
   )
 }
+
 

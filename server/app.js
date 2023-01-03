@@ -66,7 +66,6 @@ app.use('/', loginRouter);
 app.use('/', ratingRouter);
 
 app.get('/isauth', (req, res) => {
-  // console.log('isAuth==== в App.js на бэке => req.session', req.session);
   if (req.session?.userEmail) {
     res.sendStatus(200);
   } else {
