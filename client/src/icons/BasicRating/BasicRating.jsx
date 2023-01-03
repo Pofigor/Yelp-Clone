@@ -2,36 +2,21 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 
-export default function BasicRating({restourant_id}) {
+export default function BasicRating({restourant_id, value, setValue}) {
 
 
 const onChangeRating = (event, newValue) => {
   setValue(newValue);
+  
+  fetch ('http://localhost:3001/rating', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({restourant_id, newValue})
+  });
+
 }
-
-
-const [value, setValue] = React.useState(2);
-// console.log("value STATE===>>>>", value)
-
-
-
-React.useEffect(() => {
-  (async () => {
-   try {
-    fetch ('http://localhost:3001/rating', {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({restourant_id, value})
-    });
-   } catch (error) {
-    console.log(error);
-   }
-  })()}, []);
-
-
  
   
 
