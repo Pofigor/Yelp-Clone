@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ User, Restaurant }) {
       this.belongsTo(User, { foreignKey: 'id' });
       this.belongsTo(Restaurant, { foreignKey: 'id' });
-
     }
   }
   Favorite.init({
