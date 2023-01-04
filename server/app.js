@@ -20,6 +20,8 @@ const loginRouter = require('./src/routers/loginRouter');
 
 const ratingRouter = require('./src/routers/raitingRouter');
 
+const favoriteRouter = require('./src/routers/favoriteRouter');
+
 const app = express();
 
 const corsOptions = {
@@ -64,6 +66,8 @@ app.use('/', regRouter);
 app.use('/', loginRouter);
 
 app.use('/', ratingRouter);
+
+app.use('/', favoriteRouter);
 
 app.get('/isauth', (req, res) => {
   if (req.session?.userEmail) {
