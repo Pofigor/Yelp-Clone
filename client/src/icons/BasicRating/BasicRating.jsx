@@ -13,6 +13,7 @@ const onChangeRating = (event, newValue) => {
   
   fetch ('http://localhost:3001/rating', {
     method: 'POST',
+    credentials: "include",
     headers: {
       'Content-type': 'application/json',
     },

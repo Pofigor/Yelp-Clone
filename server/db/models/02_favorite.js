@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
   Favorite.init({
     user_id: DataTypes.INTEGER,
     restourant_id: DataTypes.INTEGER,
+    name: DataTypes.STRING,
+    desc: DataTypes.TEXT,
+    img: DataTypes.STRING,
+    away: DataTypes.BOOLEAN,
+    deliwery: DataTypes.BOOLEAN,
+    pay: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Favorite',
