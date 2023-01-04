@@ -2,11 +2,11 @@ const { Rating } = require('../../db/models');
 
 const addRating = async (req, res) => {
   try {
+    const { userId } = req.session;
     // eslint-disable-next-line camelcase
     const { restourant_id, newValue } = req.body;
-    console.log('req.body=====>>>>>>', req.body);
     // eslint-disable-next-line camelcase
-    await Rating.create({ restourant_id, rating: newValue });
+    await Rating.create({ restourant_id, rating: newValue, user_id: userId });
     res.sendStatus(200);
   } catch (error) {
     console.log('ERROR CREATE NEW RATING VALUE', error);

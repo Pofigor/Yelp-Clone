@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import {Link} from 'react-router-dom'
 
@@ -13,7 +13,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import styles from './Card.module.css'
 
 
-export default function Card({el, restourant_id}) {
+export default function Card({el, restourant_id, name, desc, img, away, deliwery, pay}) {
 
 
 const [isFaforite, setIsFavorite] = useState(false);
@@ -50,10 +50,18 @@ const onClickFavorite = () => {
       headers: {
         'Content-type': 'application/json',
       },
+      body: JSON.stringify({restourant_id, name, desc, img, away, deliwery, pay})
+    })
+  } else {
+    fetch ('http://localhost:3001/delete', {
+      method: 'DELETE',
+      credentials: "include",
+      headers: {
+        'Content-type': 'application/json',
+      },
       body: JSON.stringify({restourant_id})
     })
   }
-
 
 }
 

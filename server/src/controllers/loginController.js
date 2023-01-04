@@ -19,7 +19,6 @@ const loginUser = async (req, res) => {
       req.session.userName = user.name;
       req.session.userEmail = user.email;
       req.session.userId = user.id;
-      console.log('req.session.userId===========>>>>>>>>>>>>>>>>>>>>..', req.session.userId);
       req.session.save(() => {
         res.redirect('/');
       });
