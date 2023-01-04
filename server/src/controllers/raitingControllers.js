@@ -13,6 +13,7 @@ const addRating = async (req, res) => {
   }
 };
 
+// пока не реализовано. Нужно подумать, как это сделать
 const getCurrentlRating = async (req, res) => {
   try {
     const currentRating = await Rating.findAll({ raw: true });

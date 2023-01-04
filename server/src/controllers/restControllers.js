@@ -1,6 +1,7 @@
 const { Restaurant } = require('../../db/models');
 
 const getAllRest = async (req, res) => {
+  // console.log('req.session from restController===>>>>', req.session);
   try {
     const allRest = await Restaurant.findAll({ raw: true });
     res.json({ allRest });
