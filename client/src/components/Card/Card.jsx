@@ -42,6 +42,19 @@ const [value, setValue] = useState(2);
 
 const onClickFavorite = () => {
   setIsFavorite(!isFaforite)
+
+  if(!isFaforite) {
+    fetch ('http://localhost:3001/favorite', {
+      method: 'POST',
+      credentials: "include",
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({restourant_id})
+    })
+  }
+
+
 }
 
 
