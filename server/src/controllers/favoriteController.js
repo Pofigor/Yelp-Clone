@@ -30,8 +30,17 @@ const getAllFavorite = async (req, res) => {
     console.log('allFavorite=====', allFavorite);
     res.json({ allFavorite });
   } catch (error) {
-    console.log('ERROR FIND ITEM FROM Favorite DB', error);
+    console.log('ERROR FIND ALL ITEMS FROM Favorite DB', error);
   }
 };
+
+// const getOneFavorite = async (req, res) => {
+//   const { restourant_id } = req.body;
+//   try {
+//     const oneFaforite = await Favorite.findOne({ where: {restourant_id} });
+//   } catch (error) {
+//     console.log('ERROR FIND ONE ITEM FROM Favorite DB', error);
+//   }
+// };
 
 module.exports = { addToFavorite, deleteFavorite, getAllFavorite };

@@ -19,12 +19,16 @@ React.useEffect(() => {
   (async () => {
     try {
       const response = await fetch('http://localhost:3001/restaurants')
+      // сделать запрос, который принимает все фэйвориты текущего пользователя
+      
       if(response.ok) {
         const rest = await response.json();
         setRestaurant(rest.allRest)
       } else {
         console.log('ERROR! Fetch is no OK');
       }
+
+    // сравнить оба фэйворита через инклюд, допустим: если в фэйворите есть объект, то добавляем ключ ТРУ
     } catch (error) {
       console.log(error);
     }

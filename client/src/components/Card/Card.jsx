@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {Link} from 'react-router-dom'
 
@@ -16,54 +16,42 @@ import styles from './Card.module.css'
 export default function Card({el, restourant_id, name, desc, img, away, deliwery, pay}) {
 
 
-const [isFaforite, setIsFavorite] = useState(false);
+  
+  
+  const [isFaforite, setIsFavorite] = useState(false);
 
-const [value, setValue] = useState(2);
-
-
-
-// useEffect(() => {
-//   (async () => {
-//     try {
-//       const response = await fetch ('http://localhost:3001/rating')
-//       if (response.ok) {
-//         const rating = await response.json();
-//         console.log("rating++>>", rating)
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   })();
-// }, [])
+  
+  const [value, setValue] = useState(2);
 
 
+  const onClickFavorite = async () => {
+    // setIsFavorite(!isFaforite)
+
+    if(!isFaforite) {
+      await fetch ('http://localhost:3001/favorite', {
+        method: 'POST',
+        credentials: "include",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({restourant_id, name, desc, img, away, deliwery, pay})
+      })
+      setIsFavorite(!isFaforite)
+
+    } else {
+      fetch ('http://localhost:3001/delete', {
+        method: 'DELETE',
+        credentials: "include",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({restourant_id})
+      })
+    }
+    setIsFavorite(!isFaforite)
 
 
-
-const onClickFavorite = () => {
-  setIsFavorite(!isFaforite)
-
-  if(!isFaforite) {
-    fetch ('http://localhost:3001/favorite', {
-      method: 'POST',
-      credentials: "include",
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({restourant_id, name, desc, img, away, deliwery, pay})
-    })
-  } else {
-    fetch ('http://localhost:3001/delete', {
-      method: 'DELETE',
-      credentials: "include",
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({restourant_id})
-    })
   }
-
-}
 
 
 

@@ -1,10 +1,12 @@
 const { Restaurant } = require('../../db/models');
 
 const getAllRest = async (req, res) => {
-  // console.log('req.session from restController===>>>>', req.session);
   try {
+    // eslint-disable-next-line camelcase
+    const user_id = req.session.userId;
     const allRest = await Restaurant.findAll({ raw: true });
-    res.json({ allRest });
+    // eslint-disable-next-line camelcase
+    res.json({ allRest, user_id });
   } catch (error) {
     console.log('ERROR FIND ITEM FROM Restaurant DB', error);
   }

@@ -17,7 +17,6 @@ export default function Favorite({search, setSearch}) {
 const navigate = useNavigate();
 
 const [favorite, setFavorite] = useState([])
-// console.log("favorite=====>>>>", favorite)
 
 
   React.useEffect(() => {
