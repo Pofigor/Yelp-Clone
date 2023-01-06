@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     away: DataTypes.BOOLEAN,
     deliwery: DataTypes.BOOLEAN,
     pay: DataTypes.BOOLEAN,
+    isFavorite: DataTypes.BOOLEAN,
     // user_id: DataTypes.INTEGER,
   }, {
     sequelize,

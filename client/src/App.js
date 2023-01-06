@@ -20,6 +20,9 @@ function App() {
 
   const [auth, setAuth] = useState(false);
 
+  const [restaurant, setRestaurant] = useState([]);
+
+
   useEffect(() => {
     (async () => {
       try {
@@ -27,14 +30,15 @@ function App() {
           method: 'GET',
           credentials: 'include'
         })
-        
+
         if (response.ok) {
           setAuth(true)
         }
       } catch (error) {
         console.log('ERROR authorization!', error);
       }
-    })()}, []);
+    })()
+  }, []);
 
 
   return (
@@ -47,7 +51,7 @@ function App() {
         <Routes>
 
           <Route path='/'>
-            <Route path='' element={<Home search={search} setSearch={setSearch}/>} />
+            <Route path='' element={<Home search={search} setSearch={setSearch} auth={auth} restaurant={restaurant} setRestaurant={setRestaurant} />} />
             <Route path='/home/:id' element={<RestMore />} />
           </Route>
 
@@ -62,7 +66,7 @@ function App() {
           <Route path='/register' element={<Register setAuth={setAuth} />} />
 
 
-          <Route path='/favorite' element={<Favorite search={search} setSearch={setSearch}/>} />
+          <Route path='/favorite' element={<Favorite search={search} setSearch={setSearch} />} />
 
           <Route path='*' element={<>Requested page not found</>} />
 
