@@ -11,7 +11,6 @@ const renderRegister = (req, res) => {
 };
 
 const registerUser = async (req, res, next) => {
-  console.log('req.body====', req.body);
   const { name, email, password } = req.body;
   try {
     const hash = await bcrypt.hash(password, 10);

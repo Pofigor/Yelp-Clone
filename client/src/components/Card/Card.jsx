@@ -14,56 +14,44 @@ import styles from './Card.module.css'
 
 
 export default function Card({el, restourant_id, name, desc, img, away, deliwery, pay}) {
+  // console.log("el.isFav===========================", el.isFavorite)
+  
+  
+  const [isFavorite, setIsFavorite] = useState(el.isFavorite);
+  
+  // console.log("isFavorite============", isFavorite)
+
+  const [value, setValue] = useState(2);
 
 
-const [isFaforite, setIsFavorite] = useState(false);
+  const onClickFavorite = async () => {
+    // setIsFavorite(!isFavorite)
 
-const [value, setValue] = useState(2);
+    if(!isFavorite) {
+      await fetch ('http://localhost:3001/favorite', {
+        method: 'POST',
+        credentials: "include",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({restourant_id, name, desc, img, away, deliwery, pay})
+      })
+      setIsFavorite(!isFavorite)
+
+    } else {
+      fetch ('http://localhost:3001/delete', {
+        method: 'DELETE',
+        credentials: "include",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({restourant_id})
+      })
+    }
+    setIsFavorite(!isFavorite)
 
 
-
-// useEffect(() => {
-//   (async () => {
-//     try {
-//       const response = await fetch ('http://localhost:3001/rating')
-//       if (response.ok) {
-//         const rating = await response.json();
-//         console.log("rating++>>", rating)
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   })();
-// }, [])
-
-
-
-
-
-const onClickFavorite = () => {
-  setIsFavorite(!isFaforite)
-
-  if(!isFaforite) {
-    fetch ('http://localhost:3001/favorite', {
-      method: 'POST',
-      credentials: "include",
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({restourant_id, name, desc, img, away, deliwery, pay})
-    })
-  } else {
-    fetch ('http://localhost:3001/delete', {
-      method: 'DELETE',
-      credentials: "include",
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({restourant_id})
-    })
   }
-
-}
 
 
 
@@ -86,7 +74,7 @@ const onClickFavorite = () => {
             <div className={styles.favoriteDiv} onClick={onClickFavorite}>
               
               {
-              isFaforite ? 
+              isFavorite ? 
               (<div className={styles.favoriteTrue}><BookmarkIcon /></div>) 
               :
               (<div className={styles.favoriteFalse}><BookmarkBorderIcon /></div>)

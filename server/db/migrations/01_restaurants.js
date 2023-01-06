@@ -26,6 +26,10 @@ module.exports = {
       pay: {
         type: Sequelize.BOOLEAN,
       },
+      isFavorite: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
