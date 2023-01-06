@@ -5,7 +5,7 @@ const getAllRest = async (req, res) => {
     // eslint-disable-next-line camelcase
     const user_id = req.session.userId;
     const allRest = await Restaurant.findAll({ raw: true });
-    console.log('allRest==============', allRest);
+    // console.log('allRest==============', allRest);
     // eslint-disable-next-line camelcase
     res.json({ allRest, user_id });
   } catch (error) {
