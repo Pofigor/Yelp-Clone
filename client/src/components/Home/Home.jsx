@@ -10,12 +10,7 @@ import Search from '../Search/Search'
 
 
 export default function Home({search, setSearch, auth, restaurant, setRestaurant}) { 
-console.log("restaurant===++++++++++++++", restaurant)
 
-
-// const [restaurant, setRestaurant] = useState([]);
-//  console.log("restaurant==========", restaurant)
- 
 
 React.useEffect(() => {
   (async () => {
@@ -79,7 +74,7 @@ React.useEffect(() => {
             (
   
               restaurant?.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
-              .map((el) => <Card el={el} key={el.id} restourant_id={el.id} name={el.name} desc={el.desc} img={el.img} away={el.away} deliwery={el.deliwery} pay={el.pay} isFavor={el.isFavorite}/>)
+              .map((el) => <Card el={el} key={el.id} restourant_id={el.id} name={el.name} desc={el.desc} img={el.img} away={el.away} deliwery={el.deliwery} pay={el.pay}/>)
   
             )
   

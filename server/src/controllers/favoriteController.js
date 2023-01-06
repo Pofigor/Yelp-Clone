@@ -38,7 +38,7 @@ const getAllFavoriteUser = async (req, res) => {
   try {
     const allFavoriteUser = await Favorite.findAll({ where: { user_id } });
     res.json({ allFavoriteUser });
-    console.log('allFavoriteUser================', allFavoriteUser);
+    // console.log('allFavoriteUser================', allFavoriteUser);
   } catch (error) {
     console.log('ERROR FIND ALL ITEM USER FROM Favorite DB', error);
   }
