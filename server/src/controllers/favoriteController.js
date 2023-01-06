@@ -27,20 +27,23 @@ const deleteFavorite = async (req, res) => {
 const getAllFavorite = async (req, res) => {
   try {
     const allFavorite = await Favorite.findAll({ raw: true });
-    console.log('allFavorite=====', allFavorite);
     res.json({ allFavorite });
   } catch (error) {
     console.log('ERROR FIND ALL ITEMS FROM Favorite DB', error);
   }
 };
 
-// const getOneFavorite = async (req, res) => {
-//   const { restourant_id } = req.body;
-//   try {
-//     const oneFaforite = await Favorite.findOne({ where: {restourant_id} });
-//   } catch (error) {
-//     console.log('ERROR FIND ONE ITEM FROM Favorite DB', error);
-//   }
-// };
+const getAllFavoriteUser = async (req, res) => {
+  const user_id = req.session.userId;
+  try {
+    const allFavoriteUser = await Favorite.findAll({ where: { user_id } });
+    res.json({ allFavoriteUser });
+    console.log('allFavoriteUser================', allFavoriteUser);
+  } catch (error) {
+    console.log('ERROR FIND ALL ITEM USER FROM Favorite DB', error);
+  }
+};
 
-module.exports = { addToFavorite, deleteFavorite, getAllFavorite };
+module.exports = {
+  addToFavorite, deleteFavorite, getAllFavorite, getAllFavoriteUser,
+};

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import {Link} from 'react-router-dom'
 
@@ -14,20 +14,20 @@ import styles from './Card.module.css'
 
 
 export default function Card({el, restourant_id, name, desc, img, away, deliwery, pay}) {
-
-
+  // console.log("el.isFav===========================", el.isFavorite)
   
   
-  const [isFaforite, setIsFavorite] = useState(false);
-
+  const [isFavorite, setIsFavorite] = useState(el.isFavorite);
   
+  // console.log("isFavorite============", isFavorite)
+
   const [value, setValue] = useState(2);
 
 
   const onClickFavorite = async () => {
-    // setIsFavorite(!isFaforite)
+    // setIsFavorite(!isFavorite)
 
-    if(!isFaforite) {
+    if(!isFavorite) {
       await fetch ('http://localhost:3001/favorite', {
         method: 'POST',
         credentials: "include",
@@ -36,7 +36,7 @@ export default function Card({el, restourant_id, name, desc, img, away, deliwery
         },
         body: JSON.stringify({restourant_id, name, desc, img, away, deliwery, pay})
       })
-      setIsFavorite(!isFaforite)
+      setIsFavorite(!isFavorite)
 
     } else {
       fetch ('http://localhost:3001/delete', {
@@ -48,7 +48,7 @@ export default function Card({el, restourant_id, name, desc, img, away, deliwery
         body: JSON.stringify({restourant_id})
       })
     }
-    setIsFavorite(!isFaforite)
+    setIsFavorite(!isFavorite)
 
 
   }
@@ -74,7 +74,7 @@ export default function Card({el, restourant_id, name, desc, img, away, deliwery
             <div className={styles.favoriteDiv} onClick={onClickFavorite}>
               
               {
-              isFaforite ? 
+              isFavorite ? 
               (<div className={styles.favoriteTrue}><BookmarkIcon /></div>) 
               :
               (<div className={styles.favoriteFalse}><BookmarkBorderIcon /></div>)
